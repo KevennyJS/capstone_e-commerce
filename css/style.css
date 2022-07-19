@@ -1,0 +1,21 @@
+body{
+    background-color: aquamarine;
+}
+header {
+    height: 24px;
+    width: 212px;
+    left: 0px;
+    top: 0px;
+    border-radius: nullpx;
+     
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    color: #292929;
+    
+
+}
