@@ -1,4 +1,4 @@
-const novoArray = [];
+var novoArray = new Array();
 
 const products = document.querySelector('.products-wraper');
 
@@ -18,15 +18,15 @@ function criaLi(objeto) {
     imgContainer.classList.add("img_container")
     const img = document.createElement("img");
     img.classList.add("product-img");
-    img.src = objeto.img
-    imgContainer.append(img)
+    img.src = objeto.img;
+    imgContainer.append(img);
 
     const title = document.createElement("div");
     title.classList.add("title");
     const h5 = document.createElement("h5");
     h5.classList.add("products-title");
     h5.innerText = objeto.nameItem;
-    title.append(h5)
+    title.append(h5);
 
     const description = document.createElement("article");
     description.classList.add("description");
@@ -42,7 +42,7 @@ function criaLi(objeto) {
     const a = document.createElement("a");
     a.classList.add("a");
     a.innerText = objeto.addCart;
-    a.id = objeto.id
+    a.id = objeto.id;
 
     a.addEventListener('click', function (event) {
         adicionarAoCarrinho(event.target.id);
@@ -54,18 +54,17 @@ function criaLi(objeto) {
     products.append(li);
 };
 
-function adicionarAoCarrinho(objeto) {
-    novoArray.push(data[objeto - 1]);
-    console.log(novoArray)
-};
-
-//
-
-
 const carrinhoDeCompras = document.querySelector('.carrinho_de_compras_ul');
 
-function criaCa(objeto2) {
-    let liCa = document.createElement("li");
-    li.classList.add(adicionarAoCarrinho());
-    carrinhoDeCompras.append(liCa);
+
+function adicionarAoCarrinho(objeto) {
+    if (novoArray.length == 0) {
+        carrinhoDeCompras.innerHTML = "";
+    }
+    
+    novoArray.push(data[objeto - 1]);
+
+    let li = document.createElement("li");
+    li.innerText = data[objeto - 1].nameItem;
+    carrinhoDeCompras.appendChild(li);
 };
